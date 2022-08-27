@@ -51,3 +51,23 @@ JSX:
 - JSX comes with the full power of JavaScript
 - each React element is a JavaScript object stored and passed in variables
 - refer to the whole shopping list by writing <ShoppingList />
+
+
+
+*** TUTORIAL STEPS ***
+
+Passing Data Through Props:
+- Steps 1-2 in index.js
+    1. Step One: In Board's renderSquare method, pass a prop called value to the Square
+    2. Step Two: Change Square’s render method to show the passed prop
+- Congratulations! You “passed a prop” from a parent Board component to a child Square component
+- Passing props is how information flows in React apps, from parents to children
+
+
+Making an Interactive Component:
+- Step 3 in index.js
+    3. add click event to the button tag that is returned from the Square component’s render() function
+    4. refactor step 3
+        onClick={function() {console.log('click')
+        onClick={() => console.log('click')}
+
