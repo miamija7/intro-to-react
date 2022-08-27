@@ -1,0 +1,53 @@
+
+*** REACT ***
+
+What is React?:
+- a declarative, efficient, and flexible JavaScript library for building user interfaces
+- compose complex UIs from small and isolated pieces of code called “components”
+
+
+Components:
+- React.Component
+- components tell React what we want to see on the screen
+- when data changes, React will update and re-render our components
+
+    // ShoppingList is a "React component class" or "React component type"
+    class ShoppingList extends React.Component {
+      render() {
+        return (
+          <div className="shopping-list">
+            <h1>Shopping List for {this.props.name}</h1>
+            <ul>
+              <li>Instagram</li>
+              <li>WhatsApp</li>
+              <li>Oculus</li>
+            </ul>
+          </div>
+        );
+      }
+    }
+    // Example usage: <ShoppingList name="Mark" />
+
+
+Props:
+- components take in parameters, called props (short for “properties”)
+
+
+Render:
+- components return a hierarchy of views to display via the render method
+- render returns a "React element"
+
+
+JSX:
+- most developers use JSX
+- syntax to simplify writing react elements
+
+    // Equivalent to the above ShoppingList syntax
+    return React.createElement('div', {className: 'shopping-list'},
+      React.createElement('h1', /* ... h1 children ... */),
+      React.createElement('ul', /* ... ul children ... */)
+    );
+
+- JSX comes with the full power of JavaScript
+- each React element is a JavaScript object stored and passed in variables
+- refer to the whole shopping list by writing <ShoppingList />

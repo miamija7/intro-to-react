@@ -1,6 +1,6 @@
 1. Make sure you have a recent version of Node.js installed.
 
-2. TERMINAL -> pwd project folder:
+2. TERMINAL -> within project folder:
    npx create-react-app my-app
    cd my-app
    npm start

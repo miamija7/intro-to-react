@@ -1,10 +1,14 @@
 # intro-to-react
 
-We will build a small game during this tutorial. The techniques you’ll learn in the tutorial are fundamental to building any React app, and mastering it will give you a deep understanding of React.
+A small tic-tac-toe game. Learn the fundamentals to building any React app.
 
-The tutorial is divided into several sections:
+<u>⭕ | ⭕ | ❌</u>
+<br><u>⭕ | ❌ | ⭕</u>
+<br>❌ | ❌ | ⭕
 
-- `Setup for the Tutorial` will give you a starting point to follow the tutorial.
-- `Overview` will teach you the fundamentals of React: components, props, and state.
-- `Completing the Game` will teach you the most common techniques in React development.
-- `Adding Time Travel` will give you a deeper insight into the unique strengths of React.
+
+### This Project Features:
+- Node.js
+- Create React App setup
+- Components, props, and state
+- Techniques in react development
