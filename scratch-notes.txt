@@ -1,5 +1,5 @@
 
-*** REACT ***
+*** REACT NOTES ***
 
 What is React?:
 - a declarative, efficient, and flexible JavaScript library for building user interfaces
@@ -53,21 +53,54 @@ JSX:
 - refer to the whole shopping list by writing <ShoppingList />
 
 
+State:
+- components way to "remember" things
+- set this.state in component constructors
+- considered as private to a React component that it’s defined in
 
-*** TUTORIAL STEPS ***
+
+setState:
+    onClick={() => this.setState({...})}
+- by calling this.setState from an onClick handler, we tell React to re-render that component whenever clicked
+- when you call setState in a component, React automatically updates the child components inside of it too.
+
+
+Constructor:
+- in JavaScript classes, you need to always call super when defining the constructor of a subclass
+- all React component classes that have a constructor should start with a super(props) call
+
+
+React dev tools extension:
+- https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en
+- check the props and the state of your React components
+
+
+
+*** TUTORIAL WALK-THROUGH ***
 
 Passing Data Through Props:
 - Steps 1-2 in index.js
-    1. Step One: In Board's renderSquare method, pass a prop called value to the Square
-    2. Step Two: Change Square’s render method to show the passed prop
+    1. in Board's renderSquare method, pass a prop called value to the Square
+    2. change Square’s render method to show the passed prop
 - Congratulations! You “passed a prop” from a parent Board component to a child Square component
 - Passing props is how information flows in React apps, from parents to children
 
 
 Making an Interactive Component:
-- Step 3 in index.js
-    3. add click event to the button tag that is returned from the Square component’s render() function
-    4. refactor step 3
+- Step 3-6 in index.js
+    3. add click event listener to the button tag that is returned from the Square component’s render() function
+    4. refactor step 3...
         onClick={function() {console.log('click')
         onClick={() => console.log('click')}
+    5. add a constructor to the Square class to initialize state
+    6. change the Square’s render method to display the current state’s value when clicked
+        a. Replace this.props.value with this.state.value inside the <button> tag
+        b. Replace the onClick={...} event handler with onClick={() => this.setState({value: 'X'})}
+        c. Put the className and onClick props on separate lines for better readability
+
+
+
+
+
+
 
