@@ -1,0 +1,29 @@
+1. Make sure you have a recent version of Node.js installed.
+
+2. TERMINAL -> pwd project folder:
+   npx create-react-app my-app
+   cd my-app
+   npm start
+
+3. Delete all files in the src/ folder of the new project
+    cd my-app
+    cd src
+    # If you're using a Mac or Linux:
+    rm -f *
+    # Or, if you're on Windows:
+    del *
+    # Then, switch back to the project folder
+    cd ..
+
+4. Add a file named index.css in the src/ folder with this CSS code.
+
+5. Add a file named index.js in the src/ folder with this JS code.
+
+6. Add these three lines to the top of index.js in the src/ folder:
+    import React from 'react';
+    import ReactDOM from 'react-dom/client';
+    import './index.css';
+
+7. TERMINAL: from '/my-app' run -> npm start -> from the project folder
+
+8. BROWSER: http://localhost:3000
