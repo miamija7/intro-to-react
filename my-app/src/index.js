@@ -2,37 +2,76 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-class Square extends React.Component {
-    /* Step 5 */
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
+// // Step 12
+// class Square extends React.Component {
+//     // Step 10
+//     // // Step 5
+//     // constructor(props) {
+//     //     super(props);
+//     //     this.state = {
+//     //         value: null,
+//     //     };
+//     // }
+//
+//     render() {
+//         return (
+//             <button
+//                 className="square"
+//                 onClick={() => this.props.onClick()} // Step 10
+//                 // onClick={() => this.setState({value: 'X'})} // Step 6
+//                 // onClick={() => console.log('click')} // Step 3-4
+//             >{
+//                 this.props.value // Step 10
+//                 // this.state.value // Step 6
+//                 // this.props.value // Step 2
+//             }
+//             </button>
+//         );
+//     }
+// }
 
-    render() {
-        return (
-            <button
-                className="square"
-                onClick={() => this.setState({value: 'X'})} // Step 6
-                // onClick={() => console.log('click')} // Step 3-4
-            >{
-                this.state.value // Step 6
-                // this.props.value // Step 2
-            }
-            </button>
-        );
-    }
+// Step 12
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick}>
+            {props.value}
+        </button>
+    );
 }
 
 class Board extends React.Component {
+    // Step 7
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+            xIsNext: true, // Step 13
+        };
+    }
+
+    // Step 11
+    handleClick(i) {
+        const squares = this.state.squares.slice();
+        squares[i] = this.state.xIsNext ? 'X' : 'O';    // Step 13
+        // squares[i] = 'X';    // Step 13
+        this.setState({
+            squares: squares,
+            xIsNext: !this.state.xIsNext, // Step 13
+        });
+
+    }
+
     renderSquare(i) {
-        return <Square value={i} />; // Step 1
+        return <Square
+            value={this.state.squares[i]} // Step 8
+            onClick={() => this.handleClick(i)} // Step 9
+        />
+        // return <Square value={i} />; // Step 1
     }
 
     render() {
-        const status = 'Next player: X';
+        const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O'); // Step 13
+        // const status = 'Next player: X'; // Step 13
 
         return (
             <div>
